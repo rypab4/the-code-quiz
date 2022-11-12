@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <title>Coding Quiz</title>
 </head>
+
 <body>
-    
+    <header class="score-timer">
+        <button>View High Scores</button>
+        <p>time: 00</p>
+    </header>
+    <section class="welcome">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions with in the time limit. Keep in mind that incrorect answers
+            will penalize your scoes by the seconds</p>
+        <button>Start Quiz</button>
+
+    </section>
+    <section class="questions">
+         <ul id="ul">
+            <li id="ques1" onclick="button"></li>
+            <li id="ques1" onclick="button"></li>
+            <li id="ques1" onclick="button"></li>
+            <li id="ques1" onclick="button"></li>
+
+        </ul>
+
+    </section>
+    <section class="results">
+         <span id="scoreCard"></span>
+
+    </section>
 </body>
+
 </html>
