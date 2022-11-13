@@ -1,4 +1,4 @@
-var containerQuestionEl = document.getElementById("question");
+var containerQuestionEl = document.getElementById("question-box");
 var containerStartEl = document.getElementById("container-group");
 var containerEndEl = document.getElementById("last")
 var containerScoreEl = document.getElementById("scoreboard")
@@ -86,7 +86,7 @@ var renderStartPage = function () {
 
 //every second, check if game-over is true, or if there is time left. Start time at 30. 
 var setTime = function () {
-  timeleft = 30;
+  timeleft = 60;
 
 var timercheck = setInterval(function() {
   timerEl.innerText = timeleft;
