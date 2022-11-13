@@ -6,36 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> -->
     <title>Coding Quiz</title>
 </head>
 
 <body>
-    <header class="score-timer">
-        <button>View High Scores</button>
-        <p>time: 00</p>
-    </header>
-    <section class="welcome">
-        <h1>Coding Quiz Challenge</h1>
-        <p>Try to answer the following code-related questions with in the time limit. Keep in mind that incrorect answers
-            will penalize your scoes by the seconds</p>
-        <button>Start Quiz</button>
-
-    </section>
-    <section class="questions">
-         <ul id="ul">
-            <li id="ques1" onclick="button"></li>
-            <li id="ques2" onclick="button"></li>
-            <li id="ques3" onclick="button"></li>
-            <li id="ques4" onclick="button"></li>
-
+    <header>
+        <ul>
+            <li id="high-scores">
+                <a href="View High Scores">View High Scores</a>
+            </li>
+            <li class="timer">Time: <span id="timer"></span> </li>
         </ul>
+    </header>
 
-    </section>
-    <section class="results">
-         <span id="scoreCard"></span>
-
-    </section>
+    <!-- start page -->
+    <div id="container-group" class="show">
+        <div class="container welcome">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following related-code questions within the time limit. Keep in that incorrect answers
+                will penalize your score/time by ten seconds</p>
+            <button class="start btn" id="start-game">Start Quiz</button>
+        </div>
+        <!-- qustions -->
+        <div id="question-box" class="hide">
+            <div class="container questions">
+                <div id="question"></div>
+                <div id="answer-buttons" class="btn-ans"></div>
+            </div>
+        </div>
+        <!-- last box -->
+        <div id="last" class="hide">
+            <div class="container last">
+                <div id="scoreboard">
+                    <h1>Game Finished</h1>
+                </div>
+                <!-- score entry -->
+                <form id="init" class="initials">
+                    <p>Enter Initials:
+                        <input type="text" name="initials" id="initials" class="input">
+                        <button class="btn done" id="scored" type="submit">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <!-- score box -->
+        <div id="highScore-box" class="hide">
+            <div class="highScore box">
+                <h1 class="high-score">High Scores</h1>
+                <li>
+                    <ul id="high-list" class="scores-end"></ul>
+                </li>
+                <div>
+                    <button class="btn" id="play-again">Play Again</button>
+                    <button class="btn" id="reset">Reset</button>
+                </div>
+            </div>
+        </div>
+        <div class="hide" id="correct">
+            <h3>CORRECT: </h3>
+        </div>
+        <div class="hide" id="wrong">
+            <h3>Wrong!</h3>
+        </div>
+        <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

@@ -3,21 +3,71 @@
 }
 
 header{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 100%;
+    padding: 2%;
     border: solid red;
     padding: 1% 2% 2% 2%
     
 }
 
+ul{
+    display: flex;
+    justify-content: space-between;
+    margin:1% 5%;   
+}
+
+h1{
+    font-size: 25px;
+    margin-bottom: 5%;
+}
+
 .welcome{
-    margin: 10% 25% 10% 25%;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10%;
+    align-items: center;
     text-align: center;
+    border: solid green;
 
 }
+/* all buttons */
+.btn {
+    margin-top: 10%;
+    padding: 3%;
+    border-radius: 5%;
+}
+
+/* for all containers */
+.container {
+    padding: 15%;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+.last {
+    text-align: left;
+    border: solid red;
+    padding: 5% 2% 2% 10%;
+}
+
+.box{
+    text-align: left;
+    border: solid red;
+    margin: 10% 10% 10% 10%;
+}
+
+h3{
+    font-size: 15px;
+    margin: 10% 10% 10% 10%;
+}
+.hide{
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+.questions {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 20px;
+    margin: auto;
+  }
