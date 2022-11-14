@@ -8,19 +8,19 @@ var highScoreBox = document.getElementById("highScore-box")
 var highScores = document.getElementById("high-scores")
 var listHigh = document.getElementById("high-list")
 var correct = document.getElementById("correct")
-var wrongEl = document.getElementById("wrong")
+var wrong = document.getElementById("wrong")
 //buttons
 var startButton = document.querySelector("#start-game");
 var playAgain = document.querySelector("#play-again")
-var btnClearScoresEl = document.querySelector("#reset")
+var reset = document.querySelector("#reset")
 //questions/answers element
 var questionEl = document.getElementById("question")
-var answerbuttonsEl = document.getElementById("answer-buttons")
-var timerEl = document.querySelector("#timer");
+var ansBut = document.getElementById("answer-buttons")
+var timer = document.querySelector("#timer");
 var score = 0;
 var timeleft;
 var gameover
-timerEl.innerText = 0;
+timer.innerText = 0;
 
 //High Score Array
 var HighScores = [];
@@ -72,16 +72,16 @@ var renderStartPage = function () {
   scoreBoard.removeChild(scoreBoard.lastChild)
   QuestionIndex = 0
   gameover = ""
-  timerEl.textContent = 0 
+  timer.textContent = 0 
   score = 0
 
   if (correct.className = "show") {
       correct.classList.remove("show");
       correct.classList.add("hide")
   }
-  if (wrongEl.className = "show") {
-      wrongEl.classList.remove("show");
-      wrongEl.classList.add("hide");
+  if (wrong.className = "show") {
+      wrong.classList.remove("show");
+      wrong.classList.add("hide");
   }
 }
 
@@ -90,7 +90,7 @@ var setTime = function () {
   timeleft = 60;
 
 var timercheck = setInterval(function() {
-  timerEl.innerText = timeleft;
+  timer.innerText = timeleft;
   timeleft--
 
   if (gameover) {
@@ -99,7 +99,7 @@ var timercheck = setInterval(function() {
  
   if (timeleft < 0) {
       showScore()
-      timerEl.innerText = 0
+      timer.innerText = 0
       clearInterval(timercheck)
   }
 
@@ -126,8 +126,8 @@ var setQuestion = function() {
 
 //remove answer buttons
 var resetAnswers = function() {
-  while (answerbuttonsEl.firstChild) {
-      answerbuttonsEl.removeChild(answerbuttonsEl.firstChild)
+  while (ansBut.firstChild) {
+      ansBut.removeChild(ansBut.firstChild)
   };
 };
 
@@ -140,7 +140,7 @@ var displayQuestion = function(index) {
       answerbutton.classList.add('btn')
       answerbutton.classList.add('answerbtn')
       answerbutton.addEventListener("click", answerCheck)
-      answerbuttonsEl.appendChild(answerbutton)
+      ansBut.appendChild(answerbutton)
       }
   }
 
@@ -150,15 +150,15 @@ var answerCorrect = function() {
   if (correct.className = "hide") {
       correct.classList.remove("hide")
       correct.classList.add("banner")
-      wrongEl.classList.remove("banner")
-      wrongEl.classList.add("hide")
+      wrong.classList.remove("banner")
+      wrong.classList.add("hide")
       }
   }  
 //display wrong! on screen
 var answerWrong = function() {
-  if (wrongEl.className = "hide") {
-      wrongEl.classList.remove("hide")
-      wrongEl.classList.add("banner")
+  if (wrong.className = "hide") {
+      wrong.classList.remove("hide")
+      wrong.classList.add("banner")
       correct.classList.remove("banner")
       correct.classList.add("hide")
   }
@@ -290,9 +290,9 @@ var displayHighScores = function() {
       correct.classList.add("hide");
   }
 
-  if (wrongEl.className = "show") {
-      wrongEl.classList.remove("show");
-      wrongEl.classList.add("hide");
+  if (wrong.className = "show") {
+      wrong.classList.remove("show");
+      wrong.classList.add("hide");
       }
   
 }
@@ -319,4 +319,4 @@ highScores.addEventListener("click", displayHighScores)
 //Go back button
 playAgain.addEventListener("click", renderStartPage)
 //clear scores button
-btnClearScoresEl.addEventListener("click", clearScores)
+reset.addEventListener("click", clearScores)
