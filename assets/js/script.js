@@ -1,16 +1,17 @@
-var containerQuestionEl = document.getElementById("question-box");
-var containerStartEl = document.getElementById("container-group");
-var containerEndEl = document.getElementById("last")
-var containerScoreEl = document.getElementById("scoreboard")
-var formInitials = document.getElementById("init")
-var containerHighScoresEl = document.getElementById("highScore-box")
-var ViewHighScoreEl = document.getElementById("high-scores")
-var listHighScoreEl = document.getElementById("high-list")
-var correctEl = document.getElementById("correct")
+// call all variables
+var questionBox = document.getElementById("question-box");
+var containerGroup = document.getElementById("container-group");
+var lastContainer = document.getElementById("last")
+var scoreBoard = document.getElementById("scoreboard")
+var initialsForm = document.getElementById("init")
+var highScoreBox = document.getElementById("highScore-box")
+var highScores = document.getElementById("high-scores")
+var listHigh = document.getElementById("high-list")
+var correct = document.getElementById("correct")
 var wrongEl = document.getElementById("wrong")
 //buttons
-var btnStartEl = document.querySelector("#start-game");
-var btnGoBackEl = document.querySelector("#play-again")
+var startButton = document.querySelector("#start-game");
+var playAgain = document.querySelector("#play-again")
 var btnClearScoresEl = document.querySelector("#reset")
 //questions/answers element
 var questionEl = document.getElementById("question")
@@ -64,19 +65,19 @@ var questions = [
 
   //if go back button is hit on high score page
 var renderStartPage = function () {
-  containerHighScoresEl.classList.add("hide")
-  containerHighScoresEl.classList.remove("show")
-  containerStartEl.classList.remove("hide")
-  containerStartEl.classList.add("show")
-  containerScoreEl.removeChild(containerScoreEl.lastChild)
+  highScoreBox.classList.add("hide")
+  highScoreBox.classList.remove("show")
+  containerGroup.classList.remove("hide")
+  containerGroup.classList.add("show")
+  scoreBoard.removeChild(scoreBoard.lastChild)
   QuestionIndex = 0
   gameover = ""
   timerEl.textContent = 0 
   score = 0
 
-  if (correctEl.className = "show") {
-      correctEl.classList.remove("show");
-      correctEl.classList.add("hide")
+  if (correct.className = "show") {
+      correct.classList.remove("show");
+      correct.classList.add("hide")
   }
   if (wrongEl.className = "show") {
       wrongEl.classList.remove("show");
@@ -107,10 +108,10 @@ var timercheck = setInterval(function() {
 
 var startGame = function() {
   //add classes to show/hide start and quiz screen
-  containerStartEl.classList.add('hide');
-  containerStartEl.classList.remove('show');
-  containerQuestionEl.classList.remove('hide');
-  containerQuestionEl.classList.add('show');
+  containerGroup.classList.add('hide');
+  containerGroup.classList.remove('show');
+  questionBox.classList.remove('hide');
+  questionBox.classList.add('show');
   //Shuffle the questions so they show in random order
   arrayShuffledQuestions = questions.sort(() => Math.random() - 0.5)
   setTime()
@@ -146,9 +147,9 @@ var displayQuestion = function(index) {
 
 //display correct! on screen
 var answerCorrect = function() {
-  if (correctEl.className = "hide") {
-      correctEl.classList.remove("hide")
-      correctEl.classList.add("banner")
+  if (correct.className = "hide") {
+      correct.classList.remove("hide")
+      correct.classList.add("banner")
       wrongEl.classList.remove("banner")
       wrongEl.classList.add("hide")
       }
@@ -158,8 +159,8 @@ var answerWrong = function() {
   if (wrongEl.className = "hide") {
       wrongEl.classList.remove("hide")
       wrongEl.classList.add("banner")
-      correctEl.classList.remove("banner")
-      correctEl.classList.add("hide")
+      correct.classList.remove("banner")
+      correct.classList.add("hide")
   }
 }
 //check if answer is correct    
@@ -190,13 +191,13 @@ var answerCheck = function(event) {
 
   //Display total score screen at end of game
 var showScore = function () {
-  containerQuestionEl.classList.add("hide");
-  containerEndEl.classList.remove("hide");
-  containerEndEl.classList.add("show");
+  questionBox.classList.add("hide");
+  lastContainer.classList.remove("hide");
+  lastContainer.classList.add("show");
 
   var scoreDisplay = document.createElement("p");
   scoreDisplay.innerText = ("Your final score is " + score + "!");
-  containerScoreEl.appendChild(scoreDisplay);
+  scoreBoard.appendChild(scoreDisplay);
 }       
 
 //create high score values
@@ -208,7 +209,7 @@ var createHighScore = function(event) {
     return;
   }
 
-formInitials.reset();
+initialsForm.reset();
 
 var HighScore = {
 initials: initials,
@@ -220,15 +221,15 @@ HighScores.push(HighScore);
 HighScores.sort((a, b) => {return b.score-a.score});
 
 //clear visibile list to resort
-while (listHighScoreEl.firstChild) {
- listHighScoreEl.removeChild(listHighScoreEl.firstChild)
+while (listHigh.firstChild) {
+ listHigh.removeChild(listHigh.firstChild)
 }
 //create elements in order of high scores
 for (var i = 0; i < HighScores.length; i++) {
 var highscoreEl = document.createElement("li");
 highscoreEl.ClassName = "high-score";
 highscoreEl.innerHTML = HighScores[i].initials + " - " + HighScores[i].score;
-listHighScoreEl.appendChild(highscoreEl);
+listHigh.appendChild(highscoreEl);
 }
 
 saveHighScore();
@@ -256,7 +257,7 @@ var loadHighScore = function () {
       var highscoreEl = document.createElement("li");
       highscoreEl.ClassName = "high-score";
       highscoreEl.innerText = LoadedHighScores[i].initials + " - " + LoadedHighScores[i].score;
-      listHighScoreEl.appendChild(highscoreEl);
+      listHigh.appendChild(highscoreEl);
 
       HighScores.push(LoadedHighScores[i]);
       
@@ -266,27 +267,27 @@ var loadHighScore = function () {
 //display high score screen from link or when intiials entered
 var displayHighScores = function() {
 
-  containerHighScoresEl.classList.remove("hide");
-  containerHighScoresEl.classList.add("show");
+  highScoreBox.classList.remove("hide");
+  highScoreBox.classList.add("show");
   gameover = "true"
 
-  if (containerEndEl.className = "show") {
-      containerEndEl.classList.remove("show");
-      containerEndEl.classList.add("hide");
+  if (lastContainer.className = "show") {
+      lastContainer.classList.remove("show");
+      lastContainer.classList.add("hide");
       }
-  if (containerStartEl.className = "show") {
-      containerStartEl.classList.remove("show");
-      containerStartEl.classList.add("hide");
+  if (containerGroup.className = "show") {
+      containerGroup.classList.remove("show");
+      containerGroup.classList.add("hide");
       }
       
-  if (containerQuestionEl.className = "show") {
-      containerQuestionEl.classList.remove("show");
-      containerQuestionEl.classList.add("hide");
+  if (questionBox.className = "show") {
+      questionBox.classList.remove("show");
+      questionBox.classList.add("hide");
       }
 
-  if (correctEl.className = "show") {
-      correctEl.classList.remove("show");
-      correctEl.classList.add("hide");
+  if (correct.className = "show") {
+      correct.classList.remove("show");
+      correct.classList.add("hide");
   }
 
   if (wrongEl.className = "show") {
@@ -299,8 +300,8 @@ var displayHighScores = function() {
 var clearScores = function () {
   HighScores = [];
 
-  while (listHighScoreEl.firstChild) {
-      listHighScoreEl.removeChild(listHighScoreEl.firstChild);
+  while (listHigh.firstChild) {
+      listHigh.removeChild(listHigh.firstChild);
   }
 
   localStorage.clear(HighScores);
@@ -310,12 +311,12 @@ var clearScores = function () {
 loadHighScore()
   
 //on start click, start game
-btnStartEl.addEventListener("click", startGame)
+startButton.addEventListener("click", startGame)
 //on submit button -- enter or click
-formInitials.addEventListener("submit", createHighScore)
+initialsForm.addEventListener("submit", createHighScore)
 //when view high-scores is clicked
-ViewHighScoreEl.addEventListener("click", displayHighScores)
+highScores.addEventListener("click", displayHighScores)
 //Go back button
-btnGoBackEl.addEventListener("click", renderStartPage)
+playAgain.addEventListener("click", renderStartPage)
 //clear scores button
 btnClearScoresEl.addEventListener("click", clearScores)
