@@ -33,33 +33,33 @@ var QuestionIndex = 0
 
 // The array of questions for our quiz game.
 var questions = [
-  { q: 'Arrays in Javascript can be used to store __________.', 
-    a: '4. all of the above', 
-    choices: [{choice: '1. numbers'}, {choice: '2. booleans'}, {choice: '3. strings'}, {choice: '4. all of the above'}]
+  { q: 'What does HTML stand for?', 
+    a: '3. HyperText Markup language', 
+    choices: [{choice: '1. High times must leave'}, {choice: '2. Hit the magnetic lever'}, {choice: '3. HyperText Markup language'}, {choice: '4. Hyper type marking language'}]
   },
-  { q: 'Inside which HTML element do we put the javascript?', 
-    a: '3. <script>', 
-    choices: [{choice: '1. <h1>'}, {choice: '2. <js>'}, {choice: '3. <script>'}, {choice: '4. <head>'}]
+  { q: 'What does var stand for in Java Script?', 
+    a: '1. variable', 
+    choices: [{choice: '1. variable'}, {choice: '2. variety'}, {choice: '3. Value at risk '}, {choice: '4. video assistant recording'}]
   },
-  { q: 'In the code -- setinterval(time(),1000) -- what is time()?', 
-    a: '1. callback function', 
-    choices: [{choice: '1. callback function'}, {choice: '2. undefined'}, {choice: '3. variable'}, {choice: '4. all of the above'}]
+  { q: 'What can a function contain?', 
+    a: '1. all the above', 
+    choices: [{choice: '1. all the above'}, {choice: '2. arguments'}, {choice: '3. parameters'}, {choice: '4. parenthesis'}]
   },
-  { q: 'What syntax would call a function?', 
-    a: '4. function()', 
-    choices: [{choice: '1. var function'}, {choice: '2. function'}, {choice: '3. call function'}, {choice: '4. function()'}]
+  { q: 'Arrays use the following?', 
+    a: '4. ()', 
+    choices: [{choice: '1. []'}, {choice: '2. {}'}, {choice: '3. --'}, {choice: '4.()'}]
   },
-  { q: 'When did javascript first appear?', 
-    a: '1. 1995', 
-    choices: [{choice: '1. 1995'}, {choice: '2. Roaring twenties'}, {choice: '3. 2005'}, {choice: '4. 2000'}]
+  { q: 'What is DOM?', 
+    a: '1. Document Object Model', 
+    choices: [{choice: '1. Document Object Model'}, {choice: '2. Do more'}, {choice: '3. Domination'}, {choice: '4. Digital off mobile'}]
   },
-  { q: 'What does DOM stand for?', 
-    a: '2. Document Object Model', 
-    choices: [{choice: '1. Do Overnight Modules'}, {choice: '2. Document Object Model'}, {choice: '3. Divas Obviously Model'}, {choice: '4. Do Oo Mo'}]
+  { q: 'What HTML element contains machine-readable information (metadata) about the document, like its title, scripts, and style sheets?', 
+    a: '2. <head>', 
+    choices: [{choice: '1. <html>'}, {choice: '2. <head>'}, {choice: '3. <base>'}, {choice: '4. <link>'}]
   },
-  { q: 'What is getItem commonly used for?', 
-    a: '2. local storage', 
-    choices: [{choice: '1. adding drama'}, {choice: '2. local storage'}, {choice: '3. online shopping'}, {choice: '4. naming a variable'}]
+  { q: 'What does word-spacing do?', 
+    a: '2. properly increases or decreases the white space between words', 
+    choices: [{choice: '1. nothing'}, {choice: '2. properly increases or decreases the white space between words'}, {choice: '3. presses enter'}, {choice: '4. creates color'}]
   },
 ];
 
