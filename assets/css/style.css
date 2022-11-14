@@ -28,7 +28,7 @@ h1{
 }
 /* all buttons */
 .btn {
-    margin-top: 10%;
+    margin-top: 3%;
     padding: 3%;
     border-radius: 5%;
 }
@@ -70,4 +70,15 @@ h3{
     justify-content: flex-start;
     padding: 40px 20px;
     margin: auto;
+  }
+  #questions{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+  }
+  #answer-buttons{
+    display:flex;
+    flex-direction: column;;
+    width: 20%;
   }

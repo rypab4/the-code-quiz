@@ -162,13 +162,13 @@ var answerWrong = function() {
       correctEl.classList.add("hide")
   }
 }
-
 //check if answer is correct    
 var answerCheck = function(event) {
   var selectedanswer = event.target
       if (arrayShuffledQuestions[QuestionIndex].a === selectedanswer.innerText){
           answerCorrect()
           score = score + 7
+          console.log(arrayShuffledQuestions[QuestionIndex])
       }
 
       else {
