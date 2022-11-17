@@ -85,7 +85,7 @@ var renderStartPage = function () {
   }
 }
 
-//every second, check if game-over is true, or if there is time left. Start time at 30. 
+//timer 
 var setTime = function () {
   timeleft = 60;
 
@@ -95,12 +95,14 @@ var timercheck = setInterval(function() {
 
   if (gameover) {
       clearInterval(timercheck)
+      questionBox.classList.add('hide');
   }
  
   if (timeleft < 0) {
       showScore()
       timer.innerText = 0
       clearInterval(timercheck)
+      questionBox.classList.add('hide');
   }
 
   }, 1000)
@@ -184,16 +186,22 @@ var answerCheck = function(event) {
           setQuestion()
       }   
       else {
+        questionBox.classList.remove('show'); 
+        questionBox.classList.add('hide');
          gameover = "true";
          showScore();
+         
           }
 }
 
   //Display total score screen at end of game
 var showScore = function () {
-  questionBox.classList.add("hide");
+  questionBox.classList.remove('show'); 
+  questionBox.classList.add('hide');
   lastContainer.classList.remove("hide");
   lastContainer.classList.add("show");
+  correct.classList.add("hide")
+  wrong.classList.add("hide")
 
   var scoreDisplay = document.createElement("p");
   scoreDisplay.innerText = ("Your final score is " + score + "!");

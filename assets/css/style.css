@@ -12,7 +12,7 @@ header{
 ul{
     display: flex;
     justify-content: space-between;
-    margin:1% 5%;   
+    margin:1% 5%; 
 }
 
 h1{
@@ -71,16 +71,11 @@ h3{
     padding: 40px 20px;
     margin: auto;
   }
-  #questions{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
 
-  }
-  #answer-buttons{
-    display:flex;
+  .btn-ans{
+    display: flex;
     flex-direction: column;;
-    width: 20%;
+    width: 50%;
   }
   .highScore{
     display: flex;
@@ -95,4 +90,8 @@ h3{
     display: flex;
     width: 100%;
     flex-direction: column;
+    text-align: center;
+    padding: 2%;
+    margin: auto;
+
   }
