@@ -46,7 +46,7 @@ var questions = [
     choices: [{choice: '1. all the above'}, {choice: '2. arguments'}, {choice: '3. parameters'}, {choice: '4. parenthesis'}]
   },
   { q: 'Arrays use the following?', 
-    a: '4. ()', 
+    a: '1. []', 
     choices: [{choice: '1. []'}, {choice: '2. {}'}, {choice: '3. --'}, {choice: '4.()'}]
   },
   { q: 'What is DOM?', 
@@ -168,14 +168,14 @@ var answerCheck = function(event) {
   var selectedanswer = event.target
       if (arrayShuffledQuestions[QuestionIndex].a === selectedanswer.innerText){
           answerCorrect()
-          score = score + 7
+          score = score + 16
           console.log(arrayShuffledQuestions[QuestionIndex])
       }
 
       else {
         answerWrong()
-        score = score - 1;
-        timeleft = timeleft - 3;
+        score = score - 16;
+        timeleft = timeleft - 10;
     };
 
   //go to next question, check if there is more questions
