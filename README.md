@@ -20,9 +20,9 @@ Quiz will begin and you will answer 6 questions within 60 seconds (less if quest
 If all questions have been answered, or after 60 seconds, you will get a screen to enter your initials and your game score (highest is 96). 
 ![alt text](./assets/images/Coding-Quiz-Finished.png)
 
-Then it will show the high scores.
+Then it will show the high scores.  High scores can also be viewed by clicking high scores on the upper left hyperlink.
 
-
+![alt text](./assets/images/Coding-Quiz-High%20Scores.png)
 
 
 

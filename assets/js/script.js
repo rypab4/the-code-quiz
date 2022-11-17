@@ -24,7 +24,6 @@ timer.innerText = 0;
 
 //High Score Array
 var HighScores = [];
-
  //assign array details for questions 
 var arrayShuffledQuestions
 var QuestionIndex = 0
