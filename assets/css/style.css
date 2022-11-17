@@ -90,3 +90,9 @@ h3{
     padding: 15%;
    
   }
+
+  .scores-end{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
